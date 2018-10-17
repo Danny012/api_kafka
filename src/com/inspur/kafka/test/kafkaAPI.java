@@ -17,7 +17,7 @@ public class kafkaAPI {
 		
 			int i = 0, j = 0;
 			try {
-				PrintStream ps = new PrintStream("hive_report.txt");
+				PrintStream ps = new PrintStream("output/kafka_report.txt");
 				dao d = new dao();
 				SimpleDateFormat sdf = new SimpleDateFormat("mmss");
 				Date date = new Date();

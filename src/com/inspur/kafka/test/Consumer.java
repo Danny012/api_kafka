@@ -14,10 +14,11 @@ import com.inspur.kafka.util.SecurityUtils;
 
 public class Consumer {
 
+	//public static KafkaConsumer<String, String> consumer;
 	public static List<String> consumeMessage(String topicName) {
 
 		 Properties props = SecurityUtils.getSecurityProperties();
-		props.put("bootstrap.servers", "indata-10-110-13-164.indata.com:6667");
+		props.put("bootstrap.servers", "indata-10-110-13-124.indata.com:6667");
      	props.put("client.id", "client");
 		props.put("group.id", UUID.randomUUID().toString());
 		props.put("enable.auto.commit", "true");
@@ -27,7 +28,7 @@ public class Consumer {
 		props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 		props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 		KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
-		consumer.subscribe(Arrays.asList(topicName));
+		consumer.subscribe(Arrays.asList(new String[] { topicName }));
 		int i = 0;		
 		List<String> newsList=new ArrayList<>();
 			while(i<2) {
@@ -42,7 +43,7 @@ public class Consumer {
 	return newsList;
 	}
 	public static void main(String[] args) {
-		consumeMessage("kafka_topic4702");
+		consumeMessage("kafka_topic2452");
 	}
 
 }

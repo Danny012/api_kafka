@@ -5,7 +5,7 @@ import java.util.Properties;
 
 public class SecurityUtils {
 	private static final String USER_KEYTAB = "kafka.service.keytab";
-	private static final String USER_PRINCIPAL = "kafka/indata-10-110-13-164.indata.com@INDATA.COM";
+	private static final String USER_PRINCIPAL = "kafka/indata-10-110-13-125.indata.com@INDATA.COM";
 
 	public static Properties getSecurityProperties() {
 		Properties props = new Properties();	
